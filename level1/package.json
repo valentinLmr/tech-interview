@@ -8,6 +8,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:integration": "node index | diff expected_output.json - && echo 'Test passed!'"
+    "test:integration": "rm output.json && node index && diff expected_output.json output.json && echo 'Test passed!'"
   }
 }
