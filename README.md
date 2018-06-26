@@ -11,6 +11,7 @@
 
 - code should be clean (ES6, Typescript, Flow allowed)
 - tests should be present (Show your best skills : TDD, unit, integration and more)
+- synchronous IO should not be used (ex: use fs.readdir not fs.readdirSync)
 - it must run in a MacOS or Linux environment, npm installed and node v8.0.0 or more recent
 - comments could be added when you need to clarify a design decision or assumptions about the spec
 - documentation could be added to clarify any details (how to run tests, etc)
