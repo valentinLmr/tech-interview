@@ -9,11 +9,11 @@
 
 ## What we expect
 
-- clean code (ES6, Typescript, Flow allowed)
-- tests (Show your best skills : TDD, unit, integration and more)
-- use any tool if they can be installed through NPM
-- comments when you need to clarify a design decision or assumptions about the spec
-- a simple way to run the code and the tests (write doc if necessary)
+- code should be clean (ES6, Typescript, Flow allowed)
+- tests should be present (Show your best skills : TDD, unit, integration and more)
+- it must run in a MacOS or Linux environment, npm installed and node v8.0.0 or more recent
+- comments could be added when you need to clarify a design decision or assumptions about the spec
+- documentation could be added to clarify any details (how to run tests, etc)
 
 ## Acknowledgements
 
