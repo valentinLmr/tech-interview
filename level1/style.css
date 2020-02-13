@@ -1,0 +1,34 @@
+#container{
+  display:flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%
+}
+
+#articles {
+  width: 30%;
+  height: 30%;
+}
+
+#carts {
+  width: 30%;
+  height: 30%;
+}
+
+.item{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.item h4 {
+  margin:0;
+}
+
+.item p{
+  margin:0;
+}
+
+.cart {
+  width: 50%;
+}
