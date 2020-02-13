@@ -11,24 +11,37 @@ fetch('./input.json')
   return resp.json();
 })
 .then(function(data){
+
+  //display ARTICLES in my HTML
   let outputArticleName = " "
+  let outputArticlePrice = " "
   const articles = data.articles
   for(i = 0; i < articles.length; i++){
-  outputArticleName += '<li>' + articles[i].name + ' ' + articles[i].price + '</li>'
+    outputArticleName += '<div class="article"  data-id="'+ articles[i].id +'"><h3> name: ' + articles[i].name + '</h3> <p class=price data-price='+ articles[i].price +'> Price: ' + articles[i].price + ' €</p></div>'
   }
-  // document.getElementById('mydata').insertAdjacentHTML('beforeend',outputArticleName)
+  document.getElementById('articles').insertAdjacentHTML('beforeend',outputArticleName)
 
-console.log(data.carts[0].items)
-  let outputCartId = ""
+
+   // display CART in my HTML
+  let outputCartId = " "
+  let outputItem = " "
   const carts = data.carts
   for(i = 0; i < carts.length; i++){
-  const items = data.carts[i].items
-  console.log(items)
-  // outputArticleName += '<li>' + carts[i].name + ' ' + carts[i].price + '</li>'
+    outputCartId += '<div class=cart data-id='+ carts[i].id + '><h3> cart ID:' + carts[i].id + '</h3>'
+    for(index = 0; index < carts[i].items.length; index++){
+      outputCartId += '<div class=item> <h4 class=article_id data-id='+ carts[i].items[index].article_id +'> Article ID:' + carts[i].items[index].article_id +'</h4><p class=article-qty> Quantité: '+ carts[i].items[index].quantity + '</p></div>';
+    }
+    outputCartId += '</div>'
   }
-  // document.getElementById('mydata').insertAdjacentHTML('beforeend',output)
+ document.getElementById('carts').insertAdjacentHTML('beforeend',outputCartId)
 
-
-
+  const allArticles = document.querySelectorAll(".article")
+  console.log(allArticles)
 })
+
+
+
+
+
+
 
