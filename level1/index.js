@@ -4,11 +4,14 @@
 // import { displayArticle } from "./plugins/displayArticleHtml"
 // import { displayCart } from "./plugins/displayCartHtml"
 
+
+
 fetch('./input.json')
 .then(function(resp){
   return resp.json();
 })
 .then(function(data){
+
   //display ARTICLES in my HTML
   // displayArticle();
 // const displayArticle = () => {
@@ -42,7 +45,7 @@ fetch('./input.json')
 
   // Select and Add Article To cart
   // selectArticle();
-    const addArticle = (event) => {
+  const addArticle = (event) => {
   let articleId  = event.dataset.id
   const carts    = document.querySelectorAll(".cart")
   carts.forEach((cart) => {
@@ -62,7 +65,8 @@ fetch('./input.json')
       articleId = ""
     })
   })
-}
+};
+
 // const selectArticle = () => {
   const allArticles = document.querySelectorAll(".article")
   allArticles.forEach((article) => {
@@ -77,9 +81,9 @@ fetch('./input.json')
   const json = () => {
   const cartsToJson   = document.querySelectorAll(".cart")
   let totalJson       = 0
-  let  dataJson       = "{ carts: ["
+  let  dataJson       = "{carts :}"
   cartsToJson.forEach((cart)  => {
-    dataJson          += "{id:'" + cart.dataset.id + "'"
+    dataJson          += "{id : cart.dataset.id"
     const allItems    = cart.querySelectorAll(".item")
     allItems.forEach((item) => {
       let arrayItemId = [] ;
@@ -93,20 +97,37 @@ fetch('./input.json')
         }
       });
     });
-    dataJson  += ",total:'" + totalJson +"'}"
+    dataJson  += ",total:totalJson},"
     totalJson = 0
   });
-  dataJson    += "]}";
-  const data = dataJson
-  console.log(dataJson)
+  dataJson =  dataJson.split("")
+  dataJson.pop()
+  dataJson = dataJson.join("")
+  dataJson += "]}"
 
-  const fs = require('fs');
-  fs.writeFileSync('./output.json', data, (err) => {
-  if (err) throw err;
-    console.log('The file has been saved!');
-  });
+  console.log(dataJson)
+  let data = dataJson
+  const f = "output.json";
+  writeTextFile(f, dataJson)
+
+  function writeTextFile(afilename, output)
+  {
+    var txtFile = new File(afilename, f);
+    txtFile.writeln(output);
+    txtFile.close();
+  }
+
+
+
+
+  // const fs = require('fs');
+  // fs.writeFileSync('./output.json', data => {
+  // if (data) throw data;
+  //   console.log('The file has been saved!');
 }
 json()
+
+
 })
 
 
