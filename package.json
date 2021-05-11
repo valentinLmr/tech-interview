@@ -205,7 +205,7 @@
     "leven": "^3.1.0",
     "levn": "^0.3.0",
     "locate-path": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.sortby": "^4.7.0",
     "lolex": "^5.1.2",
     "make-dir": "^3.0.1",
